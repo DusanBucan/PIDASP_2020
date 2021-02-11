@@ -20,3 +20,7 @@ Tabela ispod prikazuje bitne informacije o mreži.
 | Organization3 | peer1 | 14051       | nije        | myChannel |
 | Organization3 | peer2 | 15051       | nije        | myChannel |
 | Orderer       | peer0 | 7050, 7053  | jeste       | myChannel |
+
+### Pokretanje mreže
+Za kreiranje same mreže, kanala, postavljanje chain code-a na mrežu i inicializaciju stanja sveta potrebno <br> 
+je pokrenuti skriptu **all.sh** koja se nalazi u folderu test-network.
