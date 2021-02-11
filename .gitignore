@@ -1,2 +1,2 @@
-./bin/*
-./asset-transfer-basic/*
+./bin/**
+./asset-transfer-basic/**
