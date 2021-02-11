@@ -41,9 +41,7 @@ services:
     container_name: ca_org2
     networks:
       - test
-
-
-  ### kako da napravim fabric-ca/org3???
+ 
   ca_org3:
     image: hyperledger/fabric-ca:$IMAGE_TAG
     environment:
@@ -55,7 +53,7 @@ services:
       - "10054:10054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
     volumes:
-      - ../organizations/fabric-ca/org2:/etc/hyperledger/fabric-ca-server
+      - ../organizations/fabric-ca/org3:/etc/hyperledger/fabric-ca-server
     container_name: ca_org3
     networks:
       - test

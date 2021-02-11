@@ -27,12 +27,12 @@
             "request": "launch",
             "name": "Bash-Debug (hardcoded script name)",
             "cwd": "${workspaceFolder}",
-            // "program": "${workspaceFolder}/network.sh",
+            "program": "${workspaceFolder}/network.sh",
             // "program": "${workspaceFolder}/organizations/ccp-generate.sh",
             // "program": "${workspaceFolder}/scripts/createChannel.sh",
-            "program": "${workspaceFolder}/scripts/envVar.sh",
+            // "program": "${workspaceFolder}/scripts/envVar.sh",
             // "program": "${workspaceFolder}/scripts/deployCC.sh",
-            // "args": ["up", "-i", "2.3.1", "-cai", "2.3.1"],
+            "args": ["up", "-i", "2.3.1", "-ca"],
             // "args": ["createChannel"]
             // "args": ["myChannel", "3", "5", false ]
             // "args": ["mychannel", "basic", "/home/dusan/Documents/projekti/PDAISP/Hyperledger/fabric-samples/asset-transfer-basic/chaincode-go", "go", 1,1, "NA","NA","NA", 3,5,false]

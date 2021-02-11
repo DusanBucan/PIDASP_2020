@@ -326,28 +326,26 @@ queryInstalled 1 1
 queryInstalled 1 2 
 
 ## approve the definition for org1
-## (za ova 2 druga pada: proposal Failed: mychannel not found) ==> da li to zato sto
+## msm da treba samo jedan iz te organizacije da potvrdi..
 ## je ovaj prvi anchor peer pa on samo vidi kanal??
 approveForMyOrg 1 0
 # approveForMyOrg 1 1
 # approveForMyOrg 1 2 
 
-
-##@TODO: ovde je pucalo kad sam dodao pa sam zakomentarisao, treba proveriti da li je neophodno
 ## check whether the chaincode definition is ready to be committed
 ## expect org1 to have approved and org2 not to
 checkCommitReadiness 1 0 "\"Org1MSP\": true" "\"Org2MSP\": false" "\"Org3MSP\": false"
-# checkCommitReadiness 1 1 "\"Org1MSP\": true" "\"Org2MSP\": false" "\"Org3MSP\": false"
-# checkCommitReadiness 1 2 "\"Org1MSP\": true" "\"Org2MSP\": false" "\"Org3MSP\": false"
+checkCommitReadiness 1 1 "\"Org1MSP\": true" "\"Org2MSP\": false" "\"Org3MSP\": false"
+checkCommitReadiness 1 2 "\"Org1MSP\": true" "\"Org2MSP\": false" "\"Org3MSP\": false"
 
 
 checkCommitReadiness 2 0 "\"Org1MSP\": true" "\"Org2MSP\": false" "\"Org3MSP\": false"
-# checkCommitReadiness 2 1 "\"Org1MSP\": true" "\"Org2MSP\": false" "\"Org3MSP\": false"
-# checkCommitReadiness 2 2 "\"Org1MSP\": true" "\"Org2MSP\": false" "\"Org3MSP\": false"
+checkCommitReadiness 2 1 "\"Org1MSP\": true" "\"Org2MSP\": false" "\"Org3MSP\": false"
+checkCommitReadiness 2 2 "\"Org1MSP\": true" "\"Org2MSP\": false" "\"Org3MSP\": false"
 
 checkCommitReadiness 3 0 "\"Org1MSP\": true" "\"Org2MSP\": false" "\"Org3MSP\": false"
-# checkCommitReadiness 3 1 "\"Org1MSP\": true" "\"Org2MSP\": false" "\"Org3MSP\": false"
-# checkCommitReadiness 3 2 "\"Org1MSP\": true" "\"Org2MSP\": false" "\"Org3MSP\": false"
+checkCommitReadiness 3 1 "\"Org1MSP\": true" "\"Org2MSP\": false" "\"Org3MSP\": false"
+checkCommitReadiness 3 2 "\"Org1MSP\": true" "\"Org2MSP\": false" "\"Org3MSP\": false"
 
 ## now approve also for org2
 approveForMyOrg 2 0
@@ -357,16 +355,16 @@ approveForMyOrg 2 0
 ## check whether the chaincode definition is ready to be committed
 ## expect them both to have approved
 checkCommitReadiness 1 0 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": false"
-# checkCommitReadiness 1 1 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": false"
-# checkCommitReadiness 1 2 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": false"
+checkCommitReadiness 1 1 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": false"
+checkCommitReadiness 1 2 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": false"
 
 checkCommitReadiness 2 0 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": false"
-# checkCommitReadiness 2 1 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": false"
-# checkCommitReadiness 2 2 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": false"
+checkCommitReadiness 2 1 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": false"
+checkCommitReadiness 2 2 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": false"
 
 checkCommitReadiness 3 0 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": false"
-# checkCommitReadiness 3 1 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": false"
-# checkCommitReadiness 3 2 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": false"
+checkCommitReadiness 3 1 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": false"
+checkCommitReadiness 3 2 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": false"
 
 
 ## now approve also for org3
@@ -375,17 +373,17 @@ approveForMyOrg 3 0
 # approveForMyOrg 3 2
 
 checkCommitReadiness 1 0 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": true"
-# checkCommitReadiness 1 1 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": true"
-# checkCommitReadiness 1 2 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": true"
+checkCommitReadiness 1 1 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": true"
+checkCommitReadiness 1 2 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": true"
 
 
 checkCommitReadiness 2 0 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": true"
-# checkCommitReadiness 2 1 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": true"
-# checkCommitReadiness 2 2 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": true"
+checkCommitReadiness 2 1 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": true"
+checkCommitReadiness 2 2 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": true"
 
 checkCommitReadiness 3 0 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": true"
-# checkCommitReadiness 3 1 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": true"
-# checkCommitReadiness 3 2 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": true"
+checkCommitReadiness 3 1 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": true"
+checkCommitReadiness 3 2 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Org3MSP\": true"
 
 
 
@@ -399,16 +397,16 @@ successln "ZAVRSIO SAM DO commitChaincodeDefinition"
 
 ## query on both orgs to see that the definition committed successfully
 queryCommitted 1 0
-# queryCommitted 1 1
-# queryCommitted 1 2
+queryCommitted 1 1
+queryCommitted 1 2
 
 queryCommitted 2 0
-# queryCommitted 2 1
-# queryCommitted 2 2
+queryCommitted 2 1
+queryCommitted 2 2
 
 queryCommitted 3 0
-# queryCommitted 3 1
-# queryCommitted 3 2 
+queryCommitted 3 1
+queryCommitted 3 2 
 
 ## Invoke the chaincode - this does require that the chaincode have the 'initLedger'
 ## method defined
