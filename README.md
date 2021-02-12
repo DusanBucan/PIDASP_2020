@@ -36,3 +36,13 @@ za tu odganizaciju. U tabeli ispod su prikazane informacije o CA kontejnerima.
 ### Pokretanje mreže
 Za kreiranje same mreže, kanala, postavljanje chain code-a na mrežu i inicializaciju stanja sveta potrebno <br> 
 je pokrenuti skriptu **all.sh** koja se nalazi u folderu test-network.
+
+
+## Serverska aplikacija
+
+Za pokretanje serverske aplikacije potrebno je pozicionirati se u back-end-app direktorijum i instalirati zavisnosti<br>
+preko komande **npm install**, nakon toga aplikacija se moze pokrentu komandom **npm start**. <br>
+**Preduslov za uspesno pokretanje serverske aplikacije je da je mreza podignuta.**
+
+
+
