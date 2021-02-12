@@ -6,7 +6,7 @@ Aplikacija koristi Hyperledger Fabric mrežu i NodeSDK za rad sa mrežom.
 ## Hyperledger Fabric mreža
 
 Mreža se sastoji iz 3 organizacije sa po 3 peer-a i jednim orderer peer-om.
-Tabela ispod prikazuje bitne informacije o mreži.
+Tabela ispod prikazuje bitne informacije o organizacijama na mreži.
 
 | Organizacija  | Naziv | docker port | Anchor peer | kanal     |
 |---------------|-------|-------------|-------------|-----------|
@@ -20,6 +20,18 @@ Tabela ispod prikazuje bitne informacije o mreži.
 | Organization3 | peer1 | 14051       | nije        | myChannel |
 | Organization3 | peer2 | 15051       | nije        | myChannel |
 | Orderer       | peer0 | 7050, 7053  | jeste       | myChannel |
+
+### Certificate Authority na mreži
+Za svaku organizaciju kao i orderer servis kreiran je pojedan CA koji generiše potrebne kriptomaterijale <br>
+za tu odganizaciju. U tabeli ispod su prikazane informacije o CA kontejnerima.
+
+| Organizacija | docker port |
+|--------------|-------------|
+| CA_Org1      | 7054        |
+| CA_Org2      | 8054        |
+| CA_Org3      | 10054       |
+| CA_Orderer   | 9054        |
+
 
 ### Pokretanje mreže
 Za kreiranje same mreže, kanala, postavljanje chain code-a na mrežu i inicializaciju stanja sveta potrebno <br> 
