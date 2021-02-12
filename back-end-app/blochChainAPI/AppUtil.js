@@ -6,6 +6,7 @@
 
 'use strict';
 
+const { Wallets } = require('fabric-network');
 const fs = require('fs');
 const path = require('path');
 
@@ -55,6 +56,9 @@ exports.buildWallet = async (Wallets, walletPath) => {
 
 	return wallet;
 };
+
+
+
 
 exports.prettyJSONString = (inputString) => {
 	if (inputString) {
