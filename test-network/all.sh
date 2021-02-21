@@ -1,5 +1,5 @@
 export COMPOSE_PROJECT_NAME="project1"
-./network.sh down
+# ./network.sh down
 # ./network.sh up -i 2.3.1 -ca
 # ./network.sh createChannel
 # ./network.sh deployCC -ccn basic -ccl go -ccp ../asset-transfer-basic/chaincode-go
