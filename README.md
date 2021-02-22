@@ -44,5 +44,19 @@ Za pokretanje serverske aplikacije potrebno je pozicionirati se u back-end-app d
 preko komande **npm install**, nakon toga aplikacija se moze pokrentu komandom **npm start**. <br>
 **Preduslov za uspesno pokretanje serverske aplikacije je da je mreza podignuta.**
 
+### EndPoint-i aplikacije
 
+| Operacija                                 | Metoda | URL                                                     | RequestBody                     |
+|-------------------------------------------|--------|---------------------------------------------------------|---------------------------------|
+| dobavljanje svih person-a                 | GET    | http://localhost:3000/person/all                        | /                               |
+| dobavljanje person-a po id                | GET    | http://localhost:3000/person/{personId}                 | /                               |
+| dobavljanje svih automobila               | GET    | http://localhost:3000/car/all                           | /                               |
+| dobavljanje automobila po id              | GET    | http://localhost:3000/car/{carId}                       | /                               |
+| dobavljanje svih gresaka automobila sa id | GET    | http://localhost:3000/car/erros/{carId}                 | /                               |
+| kreiranje greske za automobil             | POST   | http://localhost:3000/car/makeBreakdown                 | {description, price, carId}     |
+| popravka greske automobila sa id-jem      | POST   | http://localhost:3000/car/fixBreakdown                  | {id, mechanicId}                |
+| promena boje automobila                   | POST   | http://localhost:3000/car/changeColor                   | {ID, Color, Cost, mechanicId}   |
+| promena vlasnistva automobila             | POST   | http://localhost:3000/car/changeOwner                   | {ID, newOwnerId, buyWithErrors} |
+| pretraga po boji                          | GET    | http://localhost:3000/car/filterColor/{color}           | /                               |
+| pretraga po boji i vlasniku               | GET    | http://localhost:3000/car/filterColor/{color}/{ownerId} | /                               |
 
