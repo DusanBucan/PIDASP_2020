@@ -70,9 +70,9 @@ async function blockChainInit() {
 			console.log('\n--> Submit Transaction: InitLedger, function creates the initial set of assets on the ledger');
 			await contract.submitTransaction('InitLedger');
 			console.log('*** Result: committed');
-			console.log('\n--> Evaluate Transaction: GetAllAssets, function returns all the current assets on the ledger');
-			let result = await contract.evaluateTransaction('GetAllAssets');
-			console.log(`*** Result: ${prettyJSONString(result.toString())}`);
+			// console.log('\n--> Evaluate Transaction: GetAllAssets, function returns all the current assets on the ledger');
+			// let result = await contract.evaluateTransaction('GetAllAssets');
+			// console.log(`*** Result: ${prettyJSONString(result.toString())}`);
 
 		} finally {
 			gateway.disconnect();
