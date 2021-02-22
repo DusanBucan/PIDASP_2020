@@ -76,7 +76,7 @@ router.get('/filterColor/:color/:owner',  async (req, res, next) => {
 } )
 
 
-router.get('/carErros/:carId',  async (req, res, next) => {
+router.get('/erros/:carId',  async (req, res, next) => {
 
     const carId = req.params.carId;
     let wallet = req.app.get("fabricWallet");
@@ -97,7 +97,7 @@ router.get('/carErros/:carId',  async (req, res, next) => {
 
 
 
-router.post('/makeCarBreakdown', async (req, res, next)=> {
+router.post('/makeBreakdown', async (req, res, next)=> {
   const createCarBrakedownData = req.body;
   let wallet = req.app.get("fabricWallet");
   let {contract, gateway} = await getConection(wallet,channelName, chaincodeName, org1UserId);
@@ -123,7 +123,7 @@ router.post('/makeCarBreakdown', async (req, res, next)=> {
 
 });
 
-router.post('/fixCarBreakdown', async (req, res, next)=> {
+router.post('/fixBreakdown', async (req, res, next)=> {
   const fixCarBrakedownData = req.body;
   let wallet = req.app.get("fabricWallet");
   let {contract, gateway} = await getConection(wallet,channelName, chaincodeName, org1UserId);
@@ -148,7 +148,7 @@ router.post('/fixCarBreakdown', async (req, res, next)=> {
 });
 
 
-router.post('/changeCarOwner', async (req, res, next)=> {
+router.post('/changeOwner', async (req, res, next)=> {
   const changeCarOwnerData = req.body;
   let wallet = req.app.get("fabricWallet");
   let {contract, gateway} = await getConection(wallet,channelName, chaincodeName, org1UserId);
@@ -175,7 +175,7 @@ router.post('/changeCarOwner', async (req, res, next)=> {
  
 })
 
-router.post('/changeCarColor', async (req, res, next)=> {
+router.post('/changeColor', async (req, res, next)=> {
   const changeColorData = req.body;
   let wallet = req.app.get("fabricWallet");
   let {contract, gateway} = await getConection(wallet,channelName, chaincodeName, org1UserId);
