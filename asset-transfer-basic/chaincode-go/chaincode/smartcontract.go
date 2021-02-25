@@ -41,6 +41,7 @@ type Person struct {
 	Surname        string `json:"surname"`
 	Email          string `json:"email"`
 	Money          float32 `json:"money"`
+	Mechanic	   bool `json:"mechanic"`
 }
 
 
@@ -49,10 +50,10 @@ type Person struct {
 func (s *SmartContract) InitLedger(ctx contractapi.TransactionContextInterface) error {
 
 	persons := []Person {
-		{ID: "person1", Name: "Dusan", Surname: "Bucan", Email: "dusanbzr@gmail.com", Money: 200000},
-		{ID: "person2", Name: "Sergej", Surname: "Lopatin", Email: "sergerl@gmail.com", Money: 100},
-		{ID: "person3", Name: "Marko", Surname: "Blagojevic", Email: "blagoje@gmail.com", Money: 5000},
-		{ID: "person4", Name: "Majstor", Surname: "Majstorovic", Email: "mmajstorovic@gmail.com", Money: 0},
+		{ID: "person1", Name: "Dusan", Surname: "Bucan", Email: "dusanbzr@gmail.com", Money: 200000, Mechanic:false},
+		{ID: "person2", Name: "Sergej", Surname: "Lopatin", Email: "sergerl@gmail.com", Money: 100, Mechanic:false},
+		{ID: "person3", Name: "Marko", Surname: "Blagojevic", Email: "blagoje@gmail.com", Money: 5000, Mechanic:false},
+		{ID: "person4", Name: "Majstor", Surname: "Majstorovic", Email: "mmajstorovic@gmail.com", Money: 0, Mechanic:true},
 	}
 
 	cars := []Car {
@@ -159,6 +160,10 @@ func (s *SmartContract) FixCarBrakedown(ctx contractapi.TransactionContextInterf
 		if errMechanic != nil {
 			return fmt.Errorf("failed to read mechanic from world state: %v", errMechanic)
 		}
+		if !mechanic.Mechanic {
+			return fmt.Errorf("Person with id %s is not mechanic", mechanic.ID)
+		}
+
 		// pronadji kola i vlasnika kola
 		car, errCar := s.ReadCar(ctx, carBreakdown.Car)
 		if errCar != nil {
@@ -369,6 +374,9 @@ func (s *SmartContract) UpdateCarColor(ctx contractapi.TransactionContextInterfa
 	machanic, machanicErr := s.ReadPerson(ctx, mechanicId)
 	if machanicErr != nil {
 		return machanicErr
+	}
+	if !machanic.Mechanic {
+		return fmt.Errorf("Person with id %s is not mechanic", mechanicId)
 	}
 
 	if owner.Money >= cost {

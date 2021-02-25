@@ -76,7 +76,7 @@ router.get('/filterColor/:color/:owner',  async (req, res, next) => {
 } )
 
 
-router.get('/erros/:carId',  async (req, res, next) => {
+router.get('/errors/:carId',  async (req, res, next) => {
 
     const carId = req.params.carId;
     let wallet = req.app.get("fabricWallet");

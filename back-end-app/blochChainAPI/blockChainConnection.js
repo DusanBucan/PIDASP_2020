@@ -10,11 +10,11 @@ const { Gateway, Wallets } = require('fabric-network');
 const FabricCAServices = require('fabric-ca-client');
 const path = require('path');
 const { buildCAClient, registerAndEnrollUser, enrollAdmin } = require('./CAUtil.js');
-const { buildCCPOrg1, buildWallet } = require('./AppUtil.js');
+const { buildCCPOrg1,buildCCPOrg3, buildWallet } = require('./AppUtil.js');
 const { Console } = require('console');
 
 const {channelName, chaincodeName, 
-	mspOrg1, walletPath, org1UserId} = require("./fabricConstants.js");
+	mspOrg1,mspOrg3, walletPath, org1UserId} = require("./fabricConstants.js");
 
 
 function prettyJSONString(inputString) {
@@ -25,7 +25,8 @@ function prettyJSONString(inputString) {
 // getConnection on specific channel with user
 async function getConnection(wallet, channelName, chaincodeName, orgUserId){
 	let contract;
-	const ccp = buildCCPOrg1();
+	// const ccp = buildCCPOrg1();
+	const ccp = buildCCPOrg3();
 	const gateway = new Gateway();
 	try {
 		await gateway.connect(ccp, {
@@ -53,11 +54,15 @@ function closeConnection(gateway) {
 async function blockChainInit() {
 	try {
 		// build an in memory object with the network configuration (also known as a connection profile)
-		const ccp = buildCCPOrg1();
-		const caClient = buildCAClient(FabricCAServices, ccp, 'ca.org1.example.com');
+		// const ccp = buildCCPOrg1();
+		const ccp = buildCCPOrg3();
+		// const caClient = buildCAClient(FabricCAServices, ccp, 'ca.org1.example.com');
+		const caClient = buildCAClient(FabricCAServices, ccp, 'ca.org3.example.com');
 		const wallet = await buildWallet(Wallets, walletPath);
-		await enrollAdmin(caClient, wallet, mspOrg1);
-		await registerAndEnrollUser(caClient, wallet, mspOrg1, org1UserId, 'org1.department1');
+		// await enrollAdmin(caClient, wallet, mspOrg1);
+		// await registerAndEnrollUser(caClient, wallet, mspOrg1, org1UserId, 'org1.department1');
+		await enrollAdmin(caClient, wallet, mspOrg3);
+		await registerAndEnrollUser(caClient, wallet, mspOrg3, org1UserId, 'org3.department1');
 		const gateway = new Gateway();
 		try {
 			await gateway.connect(ccp, {

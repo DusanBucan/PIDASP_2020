@@ -52,7 +52,7 @@ preko komande **npm install**, nakon toga aplikacija se moze pokrentu komandom *
 | dobavljanje person-a po id                | GET    | http://localhost:3000/person/{personId}                 | /                               |
 | dobavljanje svih automobila               | GET    | http://localhost:3000/car/all                           | /                               |
 | dobavljanje automobila po id              | GET    | http://localhost:3000/car/{carId}                       | /                               |
-| dobavljanje svih gresaka automobila sa id | GET    | http://localhost:3000/car/erros/{carId}                 | /                               |
+| dobavljanje svih gresaka automobila sa id | GET    | http://localhost:3000/car/errors/{carId}                 | /                               |
 | kreiranje greske za automobil             | POST   | http://localhost:3000/car/makeBreakdown                 | {description, price, carId}     |
 | popravka greske automobila sa id-jem      | POST   | http://localhost:3000/car/fixBreakdown                  | {id, mechanicId}                |
 | promena boje automobila                   | POST   | http://localhost:3000/car/changeColor                   | {ID, Color, Cost, mechanicId}   |
